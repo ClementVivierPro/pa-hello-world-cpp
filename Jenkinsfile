@@ -2,6 +2,8 @@ properties([
 	pipelineTriggers([pollSCM('H/3 * * * *')])
 	])
 
+archiveArtifacts artifacts :'main'
+
 node() {
 	docker.image('gcc:4.9').inside {
 		cleanWs()
