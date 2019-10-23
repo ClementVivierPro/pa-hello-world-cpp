@@ -11,5 +11,8 @@ node() {
 		sh "make"
 		sh "./main"
 		archiveArtifacts artifacts :'main'
+		stage ('Checkout')
+		stage('Archive')
+		stage('Build')
 	}
 }
